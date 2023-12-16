@@ -1,0 +1,19 @@
+.header {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 25px;
+}
+
+.navigation {
+    padding-right: 50px;
+}
+
+.navigation>a {
+    font-weight: bolder;
+}
+
+.navigation>a:hover {
+    border-bottom: 2px solid black;
+}
