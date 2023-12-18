@@ -1,0 +1,65 @@
+.home-page-container {
+    width: 100vw;
+    height: calc(100vh - 55px);
+    display: flex;
+    flex-direction: column;
+}
+
+.top-panel {
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-panel .left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-panel .right {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-panel .right .name {
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.top-panel .right .title {
+    font-size: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.top-panel .right .button-div {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.bottom-panel{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 25px;
+}
+
+.bottom-panel .social-media{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.bottom-panel p{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
