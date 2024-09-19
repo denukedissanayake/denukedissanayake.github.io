@@ -13,13 +13,13 @@ import Typography from '@mui/material/Typography';
 
 export const Experience = () => {
 
-    return <div className='section-height grid gap-y-8 md:grid-cols-2 items-center justify-center'>
+    return <div className='section-height-xl grid gap-y-8 md:grid-cols-2 items-center md:justify-center mb-12'>
         <div className='flex flex-col items-center justify-center md:gap-y-12'>
-            <h1 className='font-bold text-2xl xl:text-4xl uppercase underline'>Work Experiences</h1>
+            <h1 className='font-bold text-2xl xl:text-4xl'>Work Experiences</h1>
             <ProfQualificationTimeLine />
         </div>
         <div className='flex flex-col items-center justify-center md:gap-y-12'>
-            <h1 className='font-bold text-2xl xl:text-4xl uppercase underline'>ACADEMIC QUALIFICATIONS</h1>
+            <h1 className='font-bold text-2xl xl:text-4xl'>Academic Qualifications</h1>
             <EduQualificationTimeLine />
         </div>
     </div>

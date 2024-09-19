@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import { Experience } from "@/components/sections/experience";
+import { Expertise } from "@/components/sections/expertise";
 import Home from "@/components/sections/Home";
 
 export default function Page() {
@@ -8,6 +9,7 @@ export default function Page() {
       <Header />
       <Home />
       <Experience />
+      <Expertise />
     </div>
   );
 }

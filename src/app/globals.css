@@ -15,9 +15,9 @@ body {
 
 
 .section-height-xl{
-  @apply xl:h-[calc(100dvh-40px)];
+  @apply xl:h-[calc(100dvh-40px)] px-2;
 }
 
 .section-height{
-  @apply h-[calc(100dvh-40px)];
+  @apply h-[calc(100dvh-40px)] px-2;
 }
