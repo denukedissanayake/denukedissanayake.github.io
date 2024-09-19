@@ -32,18 +32,19 @@ export default function Home() {
     const WIDTH = 300
 
     return (
-        <div className='section-height section-height-xl grid grid-rows-3 items-center justify-center'>
-            <div className='grid items-center justify-center row-span-2 gap-y-8 xl:grid-cols-4 xl:gap-x-10'>
+        <div className=
+            'lg:h-[calc(100dvh-40px)] h-[calc(100dvh-40px)] sm:h-full sm:pt-8 section-height grid grid-rows-3 items-center justify-center'>
+            <div className='grid items-center justify-center row-span-2 gap-y-8 xl:grid-cols-3 xl:gap-x-10'>
                 <div className='xl:col-span-1 flex items-center justify-center'>
                     <Image
                         src={homePicture}
                         width={WIDTH}
                         height={WIDTH}
-                        alt="Denuke Dissanayake"
+                        alt="Denuke_Dissanayake"
                         style={imageStyle}
                     />
                 </div>
-                <div className='flex flex-col xl:items-start items-center justify-center gap-y-4 xl:col-span-3 '>
+                <div className='flex flex-col xl:items-start items-center justify-center gap-y-4 xl:col-span-2 '>
                     <span
                         style={{ fontFamily: 'Courier New, Courier, monospace' }}
                         className='text-xl md:text-4xl'>
@@ -73,7 +74,7 @@ export default function Home() {
 
                 </div>
             </div>
-            <div className='flex flex-col items-center items-center gap-y-8 row-span-1'>
+            <div className='flex flex-col items-center gap-y-8 row-span-1'>
                 <p
                     style={{ fontFamily: 'Georgia, Times New Roman, Times, serif' }}
                     className='text-xl text-center md:text-2xl'>
