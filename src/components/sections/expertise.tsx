@@ -26,7 +26,7 @@ export const Expertise = () => {
     }
 
     return (
-        <div className='section-height-xl flex flex-col items-center justify-center gap-y-8 xl:w-full mb-12 xl:mb-0'>
+        <div className='lg:h-[calc(100dvh-40px)] section-height-xl flex flex-col items-center justify-center gap-y-8 xl:w-full mb-12 xl:mb-0'>
             <h1 className='font-bold text-2xl xl:text-4xl'>Technologies and Tools</h1>
             <TechnologiesGrid />
             <Button
