@@ -32,7 +32,7 @@ export default function Home() {
     const WIDTH = 300
 
     return (
-        <div className='h-[calc(100dvh-40px)] grid grid-rows-3 items-center justify-center'>
+        <div className='section-height section-height-xl grid grid-rows-3 items-center justify-center'>
             <div className='grid items-center justify-center row-span-2 gap-y-8 xl:grid-cols-4 xl:gap-x-10'>
                 <div className='xl:col-span-1 flex items-center justify-center'>
                     <Image

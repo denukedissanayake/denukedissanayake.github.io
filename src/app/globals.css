@@ -12,3 +12,12 @@ body {
   background: var(--background);
   font-family: sans-serif, Arial, Helvetica, ;
 }
+
+
+.section-height-xl{
+  @apply xl:h-[calc(100dvh-40px)];
+}
+
+.section-height{
+  @apply h-[calc(100dvh-40px)];
+}
