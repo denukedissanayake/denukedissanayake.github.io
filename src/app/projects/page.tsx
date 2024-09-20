@@ -5,7 +5,7 @@ import LanguageTwoToneIcon from '@mui/icons-material/LanguageTwoTone';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Link from 'next/link';
 
-type Project = {
+/* type Project = {
     title: String,
     description: String,
     technologies: String,
@@ -13,7 +13,7 @@ type Project = {
     gitHub: String,
     webSite: String,
     notes: String,
-}
+} */
 
 export default function Projects() {
     return (
