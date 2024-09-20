@@ -5,6 +5,16 @@ import LanguageTwoToneIcon from '@mui/icons-material/LanguageTwoTone';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Link from 'next/link';
 
+type Project = {
+    title: String,
+    description: String,
+    technologies: String,
+    concepts: String,
+    gitHub: String,
+    webSite: String,
+    notes: String,
+}
+
 export default function Projects() {
     return (
         <div className='p-8 flex flex-col'>
@@ -35,8 +45,17 @@ const ProjectsGrid = () => {
 
     const projectList = [
         {
+            title: "SL-CINEMA Mobile Application",
+            description: `SL-CINEMA is a platform designed to create a comprehensive database of Sri Lankan Movies, Teledramas, Web Series, and Short Films. Through the mobile app, users can easily search for and discover content. They can also leave reviews, add ratings, and save favorites to revisit later. This project aims to keep users informed about ongoing and upcoming teledramas, movies, web series, and cinema releases, ensuring they don’t miss out on anything. Not only is SL-CINEMA ideal for movie and cinema enthusiasts, but it also serves as a valuable tool for directors and producers to promote their creations and add more visibility to their work.`,
+            technologies: "Flutter & Dart",
+            concepts: "Mobile Application Development",
+            gitHub: "https://github.com/denukedissanayake/Drama-Review-App",
+            webSite: "",
+            notes: "University Software Engineering Project"
+        },
+        {
             title: "Acceleration of Dynamic Time Warping algorithm for real-time nanopore selective sequencing using GPUs",
-            description: "The project aims to optimize the Dynamic Time Warping (DTW) algorithm and accelerate it using Graphics Processing Units (GPUs), So that algorithm can be executed in a GPU-equipped laptop or a GPU-equipped embedded device like NVIDIA Jetson, rather than connecting to a massive server.",
+            description: "The project aims to optimize the Dynamic Time Warping (DTW) algorithm and accelerate its performance using Graphics Processing Units (GPUs). This optimization will enable the algorithm to run efficiently on GPU-equipped laptops or embedded devices like the NVIDIA Jetson, eliminating the need for connection to a large server.",
             technologies: "C, CUDA Programming",
             concepts: "Hardware Programming, Algorithm Optimization, GPU Programming",
             gitHub: "",
@@ -45,7 +64,7 @@ const ProjectsGrid = () => {
         },
         {
             title: "AgriBot - Autonomous Agricultural Robot",
-            description: "AgriBot is the best solution for modern Greenhouses because those are full covered areas which have sensitive sensors all over the place. Because in greenhouses every condition which plant will depend, is measured and controlled accurately and another thing is there are tap lines all over the place. For areas like this, you can’t use heavy machinery or drones to seed plants and AgriBot is the perfect solution.",
+            description: `AGRI BOT is an automated robotic system designed for planting seeds in agricultural fields. It consists of three major components: the Robot, a Mobile Application, and a Web Server. The Mobile Application allows users to issue initial commands to the robot (Start, Stop, Pause) and provide essential data to initiate the seeding process (such as the number of rows, number of seeds, row gap, etc.). Based on these inputs, the robot can fully automate the seeding task. Additionally, the mobile app displays real-time data from the robot, including temperature and humidity readings, for user monitoring. The AWS Web Server facilitates communication between the robot and the mobile app. It receives data from the robot and allows users to send commands and initial parameters remotely. MQTT is used to establish this connection, ensuring seamless communication between the robot and the mobile application.`,
             technologies: "Java, MQQT, Arduino",
             concepts: "Mobile Application Development, Hardware Development",
             gitHub: "https://github.com/cepdnaclk/e16-3yp-agribot",
