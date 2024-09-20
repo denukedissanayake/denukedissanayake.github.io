@@ -2,11 +2,30 @@ import { buttonStyle } from '@/components/styles';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageTwoToneIcon from '@mui/icons-material/LanguageTwoTone';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Link from 'next/link';
 
 export default function Projects() {
     return (
         <div className='p-8 flex flex-col'>
-            <h1 className='text-4xl text-center font-bold font-serif self-center mb-8 text-brand-blue1'>Discover What I’ve Been Working On</h1>
+            <div className="flex items-center justify-between mb-8">
+                <Link href="/" passHref>
+                    <Button
+                        variant="outlined"
+                        sx={{
+                            display: {
+                                xs: 'none',
+                                md: 'inline-flex',
+                            },
+                            ...buttonStyle
+                        }}
+                        startIcon={<ArrowBackIosNewIcon />}
+                    >
+                        Back to Home
+                    </Button>
+                </Link>
+                <h1 className='text-4xl text-center justify-center flex-grow font-bold font-serif self-center text-brand-blue1'>Discover What I’ve Been Working On</h1>
+            </div>
             <ProjectsGrid />
         </div>
     )

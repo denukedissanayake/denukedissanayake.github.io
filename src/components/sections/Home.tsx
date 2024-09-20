@@ -18,9 +18,9 @@ export default function Home() {
     const WIDTH = 300
 
     return (
-        <div className='h-full lg:h-dvh pt-8 lg:pt-0 section-height grid grid-rows-3 items-center justify-center'>
+        <div className='h-full lg:h-dvh section-height grid md:grid-rows-3 gap-y-4 items-center justify-center'>
             <div className='grid items-center justify-center row-span-2 lg:gap-y-8 xl:grid-cols-3 xl:gap-x-10'>
-                <div className='xl:col-span-1 flex items-center justify-center'>
+                <div className='xl:col-span-1 flex items-center justify-center py-4 lg:py-0'>
                     <Image
                         src={homePicture}
                         width={WIDTH}
@@ -38,7 +38,7 @@ export default function Home() {
                         className='text-xl font-bold md:text-7xl font-georgia'>
                         Software Engineer
                     </span>
-                    <div className='flex flex-col gap-y-4 md:flex-row md:gap-x-8 pt-2'>
+                    <div className='flex flex-col gap-y-4 md:flex-row md:gap-x-8 pt-4'>
                         <Button
                             variant="outlined"
                             sx={buttonStyle}
@@ -66,10 +66,10 @@ export default function Home() {
                 </div>
             </div>
             <div className='flex flex-col items-center gap-y-4 md:gap-y-8 row-span-1'>
-                <p className='text-lg text-center md:text-2xl font-mono'>
+                <p className='text-lg text-center md:text-2xl font-mono px-4'>
                     I'm a passionate and creative software engineer with a knack for turning ideas into reality through code
                 </p>
-                <div className='flex gap-x-4'>
+                <div className='flex gap-x-4 pb-8 md:pb-0'>
                     <FacebookIcon fontSize='large' sx={{ cursor: 'pointer' }} />
                     <EmailIcon fontSize='large' sx={{ cursor: 'pointer' }} />
                     <LinkedInIcon fontSize='large' sx={{ cursor: 'pointer' }} />
