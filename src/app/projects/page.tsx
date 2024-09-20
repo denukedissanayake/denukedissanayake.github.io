@@ -6,7 +6,7 @@ import LanguageTwoToneIcon from '@mui/icons-material/LanguageTwoTone';
 export default function Projects() {
     return (
         <div className='p-8 flex flex-col'>
-            <h1 className='text-4xl font-bold font-serif self-center mb-8 text-brand-blue1'>Discover What I’ve Been Working On</h1>
+            <h1 className='text-4xl text-center font-bold font-serif self-center mb-8 text-brand-blue1'>Discover What I’ve Been Working On</h1>
             <ProjectsGrid />
         </div>
     )
@@ -36,9 +36,9 @@ const ProjectsGrid = () => {
     ]
 
     return (
-        <div className='grid grid-cols-2 gap-8'>
+        <div className='grid md:grid-cols-2 gap-8'>
             {projectList.map(item => (
-                <div key={item.title} className='p-4 shadow-md rounded-md font-sans'>
+                <div key={item.title} className='p-4 shadow-md rounded-md font-sans text-center'>
                     <div className='mb-4'>
                         <span className='text-2xl font-bold text-brand-blue font-mono'>{item.title}</span> <br />
                         {item?.notes && <span>({item.notes})</span>}
@@ -53,7 +53,7 @@ const ProjectsGrid = () => {
                         {item?.description}
                     </div>
                     <div>
-                        <div className='flex gap-x-8 pt-2'>
+                        <div className='flex gap-x-8 pt-2 justify-center'>
                             <Button
                                 variant="outlined"
                                 sx={buttonStyle}
