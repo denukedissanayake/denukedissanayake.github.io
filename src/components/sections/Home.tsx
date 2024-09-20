@@ -2,6 +2,7 @@
 'use client'
 
 import Image from 'next/image'
+import { buttonStyle, imageStyle } from '../styles';
 import homePicture from '../../../public/images/me.png';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
@@ -9,31 +10,16 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Button from '@mui/material/Button';
-import CallIcon from '@mui/icons-material/Call';
+import BookIcon from '@mui/icons-material/Book';
+import WorkIcon from '@mui/icons-material/Work';
+import Link from 'next/link';
 
 export default function Home() {
-
-    const imageStyle = {
-        borderRadius: '50%',
-        border: '5px solid #000',
-        padding: '10px'
-    }
-
-    const buttonStyle = {
-        border: '2px solid',
-        fontWeight: 'bold',
-        '&:hover': {
-            transform: 'scale(1.1)',
-            transition: 'transform .2s',
-            border: '2px solid',
-        }
-    }
-
     const WIDTH = 300
 
     return (
         <div className=
-            'h-[calc(100dvh-40px)] sm:h-full lg:h-[calc(100dvh-40px)] sm:pt-8 section-height grid grid-rows-3 items-center justify-center'>
+            'h-dvh sm:h-full lg:h-dvh sm:pt-8 section-height grid grid-rows-3 items-center justify-center'>
             <div className='grid items-center justify-center row-span-2 lg:gap-y-8 xl:grid-cols-3 xl:gap-x-10'>
                 <div className='xl:col-span-1 flex items-center justify-center'>
                     <Image
@@ -46,13 +32,11 @@ export default function Home() {
                 </div>
                 <div className='flex flex-col xl:items-start items-center justify-center md:gap-y-4 xl:col-span-2 '>
                     <span
-                        style={{ fontFamily: 'Courier New, Courier, monospace' }}
-                        className='text-xl md:text-4xl'>
+                        className='text-xl md:text-4xl font-courier'>
                         Hello! I'm Denuke Dissanayake
                     </span>
                     <span
-                        style={{ fontFamily: 'Georgia, Times New Roman, Times, serif' }}
-                        className='text-xl font-bold md:text-7xl'>
+                        className='text-xl font-bold md:text-7xl font-georgia'>
                         Software Engineer
                     </span>
                     <div className='flex gap-x-8 pt-2'>
@@ -66,17 +50,25 @@ export default function Home() {
                         <Button
                             variant="outlined"
                             sx={buttonStyle}
-                            endIcon={<CallIcon />}
+                            endIcon={<BookIcon />}
                         >
-                            Contact Me
+                            Check My Blog
                         </Button>
+                        <Link href="/projects" passHref>
+                            <Button
+                                variant="outlined"
+                                sx={buttonStyle}
+                                endIcon={<WorkIcon />}
+                            >
+                                Project Portfolio
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className='flex flex-col items-center gap-y-4 md:gap-y-8 row-span-1'>
                 <p
-                    style={{ fontFamily: 'Georgia, Times New Roman, Times, serif' }}
-                    className='text-lg text-center md:text-2xl'>
+                    className='text-lg text-center md:text-2xl font-mono'>
                     I'm a passionate and creative software engineer with a knack for turning ideas into reality through code
                 </p>
                 <div className='flex gap-x-4'>
