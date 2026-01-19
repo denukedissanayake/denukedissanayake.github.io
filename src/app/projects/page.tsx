@@ -1,72 +1,73 @@
-import { buttonStyle } from '@/components/styles';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageTwoToneIcon from '@mui/icons-material/LanguageTwoTone';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import Chip from '@mui/material/Chip';
 import Link from 'next/link';
-
-/* type Project = {
-    title: String,
-    description: String,
-    technologies: String,
-    concepts: String,
-    gitHub: String,
-    webSite: String,
-    notes: String,
-} */
 
 export default function Projects() {
     return (
-        <div className='p-8 flex flex-col'>
-            <div className="flex items-center justify-between mb-8">
-                <Link href="/" passHref>
-                    <Button
-                        variant="outlined"
-                        sx={{
-                            display: {
-                                xs: 'none',
-                                md: 'inline-flex',
-                            },
-                            ...buttonStyle
-                        }}
-                        startIcon={<ArrowBackIosNewIcon />}
-                    >
-                        Back to Home
-                    </Button>
-                </Link>
-                <h1 className='text-4xl text-center justify-center flex-grow font-bold font-serif self-center text-brand-blue1'>Discover What I’ve Been Working On</h1>
+        <div className='min-h-screen bg-gradient-to-b from-white to-slate-50'>
+            {/* Header */}
+            <div className='max-w-6xl mx-auto px-6 py-12'>
+                <div className="flex items-center justify-between mb-12">
+                    <Link href="/" passHref>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                display: { xs: 'none', md: 'inline-flex' },
+                                fontWeight: 600,
+                                borderColor: '#334155',
+                                color: '#334155',
+                                '&:hover': { backgroundColor: '#f8fafc' }
+                            }}
+                            startIcon={<ArrowBackIosNewIcon />}
+                        >
+                            Back to Home
+                        </Button>
+                    </Link>
+                    <div className='flex-grow text-center'>
+                        <h1 className='text-3xl md:text-4xl font-bold text-slate-800'>
+                            My Projects
+                        </h1>
+                        <p className='text-slate-500 mt-2'>
+                            A selection of work I've done
+                        </p>
+                        <div className='w-16 h-1 bg-blue-600 mx-auto mt-4'></div>
+                    </div>
+                    <div className='hidden md:block w-[140px]'></div>
+                </div>
+                <ProjectsGrid />
             </div>
-            <ProjectsGrid />
         </div>
     )
 }
 
 const ProjectsGrid = () => {
-
     const projectList = [
         {
             title: "SL-CINEMA Mobile Application",
-            description: `SL-CINEMA is a platform designed to create a comprehensive database of Sri Lankan Movies, Teledramas, Web Series, and Short Films. Through the mobile app, users can easily search for and discover content. They can also leave reviews, add ratings, and save favorites to revisit later. This project aims to keep users informed about ongoing and upcoming teledramas, movies, web series, and cinema releases, ensuring they don’t miss out on anything. Not only is SL-CINEMA ideal for movie and cinema enthusiasts, but it also serves as a valuable tool for directors and producers to promote their creations and add more visibility to their work.`,
-            technologies: "Flutter & Dart",
-            concepts: "Mobile Application Development",
+            description: `A platform for Sri Lankan Movies, Teledramas, Web Series, and Short Films. Users can search, discover, review, rate, and save favorites.`,
+            technologies: ["Flutter", "Dart"],
+            concepts: ["Mobile App Development"],
             gitHub: "https://github.com/denukedissanayake/Drama-Review-App",
             webSite: "",
             notes: "University Software Engineering Project"
         },
         {
-            title: "Acceleration of Dynamic Time Warping algorithm for real-time nanopore selective sequencing using GPUs",
-            description: "The project aims to optimize the Dynamic Time Warping (DTW) algorithm and accelerate its performance using Graphics Processing Units (GPUs). This optimization will enable the algorithm to run efficiently on GPU-equipped laptops or embedded devices like the NVIDIA Jetson, eliminating the need for connection to a large server.",
-            technologies: "C, CUDA Programming",
-            concepts: "Hardware Programming, Algorithm Optimization, GPU Programming",
+            title: "GPU-Accelerated DTW Algorithm",
+            description: "Optimization of the Dynamic Time Warping (DTW) algorithm using CUDA for real-time nanopore selective sequencing on GPU-equipped devices.",
+            technologies: ["C", "CUDA"],
+            concepts: ["GPU Programming", "Algorithm Optimization"],
             gitHub: "",
             webSite: "https://cepdnaclk.github.io/e16-4yp-Acceleration-of-DTW-algorithm-for-real-time-nanopore-selective-sequencing-using-GPUs/",
             notes: "University Final Year Project"
         },
         {
             title: "AgriBot - Autonomous Agricultural Robot",
-            description: `AGRI BOT is an automated robotic system designed for planting seeds in agricultural fields. It consists of three major components: the Robot, a Mobile Application, and a Web Server. The Mobile Application allows users to issue initial commands to the robot (Start, Stop, Pause) and provide essential data to initiate the seeding process (such as the number of rows, number of seeds, row gap, etc.). Based on these inputs, the robot can fully automate the seeding task. Additionally, the mobile app displays real-time data from the robot, including temperature and humidity readings, for user monitoring. The AWS Web Server facilitates communication between the robot and the mobile app. It receives data from the robot and allows users to send commands and initial parameters remotely. MQTT is used to establish this connection, ensuring seamless communication between the robot and the mobile application.`,
-            technologies: "Java, MQQT, Arduino",
-            concepts: "Mobile Application Development, Hardware Development",
+            description: `An automated robotic system for planting seeds with mobile app control, real-time monitoring, and AWS-powered MQTT communication.`,
+            technologies: ["Java", "MQTT", "Arduino"],
+            concepts: ["IoT", "Hardware Development"],
             gitHub: "https://github.com/cepdnaclk/e16-3yp-agribot",
             webSite: "https://cepdnaclk.github.io/e16-3yp-agribot/",
             notes: "University Third Year Project"
@@ -74,43 +75,110 @@ const ProjectsGrid = () => {
     ]
 
     return (
-        <div className='grid md:grid-cols-2 gap-8'>
-            {projectList.map(item => (
-                <div key={item.title} className='p-4 shadow-md rounded-md font-sans text-center'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {projectList.map((item) => (
+                <div
+                    key={item.title}
+                    className='bg-white p-6 rounded-lg shadow-sm border border-slate-100 
+                               hover:shadow-md transition-shadow flex flex-col'
+                >
+                    {/* Project badge */}
+                    {item.notes && (
+                        <span className='inline-block text-xs font-medium text-blue-600 
+                                        bg-blue-50 px-2 py-1 rounded mb-3 w-fit'>
+                            {item.notes}
+                        </span>
+                    )}
+
+                    {/* Title */}
+                    <h2 className='text-lg font-semibold text-slate-800 mb-3'>
+                        {item.title}
+                    </h2>
+
+                    {/* Description */}
+                    <p className='text-slate-600 text-sm leading-relaxed mb-5 flex-grow'>
+                        {item.description}
+                    </p>
+
+                    {/* Technologies */}
                     <div className='mb-4'>
-                        <span className='text-2xl font-bold text-brand-blue font-mono'>{item.title}</span> <br />
-                        {item?.notes && <span>({item.notes})</span>}
+                        <span className='text-xs font-medium text-slate-500 uppercase tracking-wide'>
+                            Tech Stack
+                        </span>
+                        <div className='flex flex-wrap gap-2 mt-2'>
+                            {item.technologies.map(tech => (
+                                <Chip
+                                    key={tech}
+                                    label={tech}
+                                    size="small"
+                                    sx={{
+                                        backgroundColor: '#f1f5f9',
+                                        color: '#475569',
+                                        fontWeight: 500,
+                                        fontSize: '0.75rem'
+                                    }}
+                                />
+                            ))}
+                        </div>
                     </div>
-                    <div className='mb-2'>
-                        <span className='font-semibold'>Concepts: </span> <span>{item?.concepts}</span>
+
+                    {/* Concepts */}
+                    <div className='mb-5'>
+                        <span className='text-xs font-medium text-slate-500 uppercase tracking-wide'>
+                            Concepts
+                        </span>
+                        <div className='flex flex-wrap gap-2 mt-2'>
+                            {item.concepts.map(concept => (
+                                <Chip
+                                    key={concept}
+                                    label={concept}
+                                    size="small"
+                                    variant="outlined"
+                                    sx={{
+                                        fontSize: '0.75rem',
+                                        borderColor: '#cbd5e1'
+                                    }}
+                                />
+                            ))}
+                        </div>
                     </div>
-                    <div className='mb-2'>
-                        <span className='font-semibold'>Technologies: </span> <span>{item?.technologies}</span>
-                    </div>
-                    <div className='mb-2 text-justify break-words'>
-                        {item?.description}
-                    </div>
-                    <div>
-                        <div className='flex gap-x-8 pt-2 justify-center'>
+
+                    {/* Action Buttons */}
+                    <div className='flex gap-3 pt-4 border-t border-slate-100'>
+                        {item.gitHub && (
                             <Button
-                                variant="outlined"
-                                sx={buttonStyle}
-                                href={item?.gitHub}
+                                variant="contained"
+                                size="small"
+                                href={item.gitHub}
                                 target="_blank"
-                                endIcon={<GitHubIcon />}
+                                startIcon={<GitHubIcon />}
+                                sx={{
+                                    backgroundColor: '#1e293b',
+                                    textTransform: 'none',
+                                    fontWeight: 600,
+                                    '&:hover': { backgroundColor: '#0f172a' }
+                                }}
                             >
                                 Code
                             </Button>
+                        )}
+                        {item.webSite && (
                             <Button
                                 variant="outlined"
-                                sx={buttonStyle}
-                                href={item?.webSite}
+                                size="small"
+                                href={item.webSite}
                                 target="_blank"
-                                endIcon={<LanguageTwoToneIcon />}
+                                startIcon={<LanguageTwoToneIcon />}
+                                sx={{
+                                    textTransform: 'none',
+                                    fontWeight: 600,
+                                    borderColor: '#1e40af',
+                                    color: '#1e40af'
+                                }}
                             >
-                                Web Site
+                                Demo
                             </Button>
-                        </div>
+                        )}
                     </div>
                 </div>
             ))}

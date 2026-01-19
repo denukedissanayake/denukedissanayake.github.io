@@ -11,224 +11,156 @@ import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import Typography from '@mui/material/Typography';
 
+// TODO: Update with your actual work experience details
+const workExperiences = [
+    {
+        title: "Software Engineer",
+        company: "Pagero - Sri Lanka",
+        period: "2023 - Present",
+        description: "Add your job responsibilities and achievements here. Focus on impact and technologies used."
+    },
+    {
+        title: "Software Engineer - Intern",
+        company: "Different Technologies",
+        period: "2022 - 2023",
+        description: "Add your internship responsibilities and key learnings here."
+    }
+];
+
+const educationHistory = [
+    {
+        degree: "Bachelor of Science in Engineering",
+        specialization: "Computer Engineering",
+        institution: "University of Peradeniya",
+        achievement: "Second Class Honours (Upper Division)"
+    },
+    {
+        degree: "Diploma in Information Technology",
+        institution: "ESOFT Metro Campus - Gampaha"
+    },
+    {
+        degree: "G.C.E Advanced Level",
+        institution: "Royal College - Colombo 07",
+        stream: "Physical Science",
+        results: "Physics(A), Chemistry(A), Mathematics(B)"
+    },
+    {
+        degree: "G.C.E Ordinary Level",
+        institution: "Royal College - Colombo 07",
+        results: "Passed with 8As and B"
+    }
+];
+
+const timelineStyles = {
+    [`& .${timelineItemClasses.root}:before`]: {
+        flex: 0,
+        padding: 0,
+    },
+};
+
 export const Experience = () => {
+    return (
+        <section className='bg-white py-12 px-6 border-t border-slate-100'>
+            <div className='max-w-6xl mx-auto'>
+                {/* Section Header */}
+                <div className='text-center mb-10'>
+                    <h2 className='text-2xl md:text-3xl font-bold text-slate-800 mb-2'>
+                        Experience & Education
+                    </h2>
+                    <div className='w-12 h-1 bg-blue-600 mx-auto'></div>
+                </div>
 
-    return <div className='lg:h-dvh grid gap-y-8 md:grid-cols-2 items-center md:justify-center mb-12'>
-        <div className='flex flex-col items-center justify-center md:gap-y-12'>
-            <h1 className='text-2xl xl:text-4xl font-bold font-serif'>Work Experiences</h1>
-            <ProfQualificationTimeLine />
-        </div>
-        <div className='flex flex-col items-center justify-center md:gap-y-12'>
-            <h1 className='text-2xl xl:text-4xl font-bold font-serif'>Academic Qualifications</h1>
-            <EduQualificationTimeLine />
-        </div>
-    </div>
+                {/* Two Column Layout */}
+                <div className='grid lg:grid-cols-2 gap-8'>
+                    {/* Work Experience */}
+                    <div>
+                        <h3 className='text-lg font-semibold text-slate-700 mb-4 flex items-center gap-2'>
+                            <LaptopMacIcon sx={{ color: '#1e40af' }} />
+                            Work Experience
+                        </h3>
+                        <Timeline sx={timelineStyles}>
+                            {workExperiences.map((exp, index) => (
+                                <TimelineItem key={index}>
+                                    <TimelineSeparator>
+                                        <TimelineConnector sx={{ bgcolor: '#cbd5e1' }} />
+                                        <TimelineDot sx={{ bgcolor: '#1e40af' }}>
+                                            <LaptopMacIcon sx={{ fontSize: 16 }} />
+                                        </TimelineDot>
+                                        <TimelineConnector sx={{ bgcolor: index === workExperiences.length - 1 ? 'transparent' : '#cbd5e1' }} />
+                                    </TimelineSeparator>
+                                    <TimelineContent sx={{ py: 2, px: 3 }}>
+                                        <div className='bg-white rounded-lg p-4 shadow-sm border border-slate-100'>
+                                            <Typography variant="h6" sx={{ fontWeight: 600, color: '#1e293b' }}>
+                                                {exp.title}
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ color: '#475569', fontWeight: 500 }}>
+                                                {exp.company}
+                                            </Typography>
+                                            <Typography variant="caption" sx={{ color: '#94a3b8', display: 'block', mb: 1 }}>
+                                                {exp.period}
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ color: '#64748b', lineHeight: 1.6 }}>
+                                                {exp.description}
+                                            </Typography>
+                                        </div>
+                                    </TimelineContent>
+                                </TimelineItem>
+                            ))}
+                        </Timeline>
+                    </div>
+
+                    {/* Education */}
+                    <div>
+                        <h3 className='text-lg font-semibold text-slate-700 mb-4 flex items-center gap-2'>
+                            <AutoStoriesIcon sx={{ color: '#059669' }} />
+                            Education
+                        </h3>
+                        <Timeline sx={timelineStyles}>
+                            {educationHistory.map((edu, index) => (
+                                <TimelineItem key={index}>
+                                    <TimelineSeparator>
+                                        <TimelineConnector sx={{ bgcolor: '#cbd5e1' }} />
+                                        <TimelineDot sx={{ bgcolor: '#059669' }}>
+                                            <AutoStoriesIcon sx={{ fontSize: 16 }} />
+                                        </TimelineDot>
+                                        <TimelineConnector sx={{ bgcolor: index === educationHistory.length - 1 ? 'transparent' : '#cbd5e1' }} />
+                                    </TimelineSeparator>
+                                    <TimelineContent sx={{ py: 2, px: 3 }}>
+                                        <div className='bg-white rounded-lg p-4 shadow-sm border border-slate-100'>
+                                            <Typography variant="h6" sx={{ fontWeight: 600, color: '#1e293b' }}>
+                                                {edu.degree}
+                                            </Typography>
+                                            {edu.specialization && (
+                                                <Typography variant="body2" sx={{ color: '#475569', fontWeight: 500 }}>
+                                                    {edu.specialization}
+                                                </Typography>
+                                            )}
+                                            <Typography variant="body2" sx={{ color: '#64748b' }}>
+                                                {edu.institution}
+                                            </Typography>
+                                            {edu.stream && (
+                                                <Typography variant="caption" sx={{ color: '#94a3b8', display: 'block' }}>
+                                                    {edu.stream}
+                                                </Typography>
+                                            )}
+                                            {edu.results && (
+                                                <Typography variant="body2" sx={{ color: '#059669', fontWeight: 500, mt: 0.5 }}>
+                                                    {edu.results}
+                                                </Typography>
+                                            )}
+                                            {edu.achievement && (
+                                                <Typography variant="body2" sx={{ color: '#059669', fontWeight: 500, mt: 0.5 }}>
+                                                    {edu.achievement}
+                                                </Typography>
+                                            )}
+                                        </div>
+                                    </TimelineContent>
+                                </TimelineItem>
+                            ))}
+                        </Timeline>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
 }
-
-const ProfQualificationTimeLine = () => (
-    <div className=''>
-        <Timeline
-            sx={{
-                [`& .${timelineItemClasses.root}:before`]: {
-                    flex: 0,
-                    padding: 0,
-                },
-            }}
-        >
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <LaptopMacIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography
-                        variant="h5"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                        fontWeight="bold"
-                    >
-                        Software Engineer
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Pagero - Sri Lanka
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <LaptopMacIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography
-                        variant="h5"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                        fontWeight="bold"
-                    >
-                        Software Engineer - Intern
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Different Technologies
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-        </Timeline>
-    </div>
-)
-
-const EduQualificationTimeLine = () => (
-    <div className=''>
-        <Timeline
-            sx={{
-                [`& .${timelineItemClasses.root}:before`]: {
-                    flex: 0,
-                    padding: 0,
-                },
-            }}
-        >
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <AutoStoriesIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography
-                        variant="h5"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                        fontWeight="bold"
-                    >
-                        Bachelor of the Science of Engineering
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontWeight="bold"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Specialized in Computer Engineering
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        University of Peradeniya
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Graduated with Second Class Honours(Upper Division)
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <AutoStoriesIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography
-                        variant="h5"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                        fontWeight="bold"
-                    >
-                        Diploma in Information Technology
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        ESOFT Metro Campus - Gampaha
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <AutoStoriesIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography
-                        variant="h5"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                        fontWeight="bold"
-                    >
-                        G.C.E Advanced Level
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Royal College - Colombo 07
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Physical Science
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Physics(A), Chemistry(A), Mathematics(B)
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <AutoStoriesIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography
-                        variant="h5"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                        fontWeight="bold"
-                    >
-                        G.C.E Ordinary Level
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Royal College - Colombo 07
-                    </Typography>
-                    <Typography
-                        fontFamily="Georgia, 'Times New Roman', Times, serif"
-                    >
-                        Passed with 8As and B
-                    </Typography>
-                </TimelineContent>
-            </TimelineItem>
-        </Timeline>
-    </div>
-)
